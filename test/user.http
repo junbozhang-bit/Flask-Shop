@@ -1,0 +1,53 @@
+###测试用户登录功能
+POST http://127.0.0.1:5000/user/login/
+Content-Type: application/json
+
+{
+    "name":"baizhan",
+    "pwd":"123456"
+}
+
+###测试用户注册功能
+POST http://127.0.0.1:5000/user/users/
+Content-Type: application/json
+
+{
+    "name":"sxt222",
+    "pwd":"123456111",
+    "real_pwd":"123456111",
+    "phone":"18743436017",
+    "email":"172@qq.com",
+    "nick_name":"fff",
+    "role_id":3
+}
+
+###测试token是否存在
+GET http://127.0.0.1:5000/user/test/
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzYzNDY5MDExLjc0OTM0OTh9.2WjyAIOwy_Hlk2ktnTEY7tmk1V9_8CTYs0HWhlWV2Os
+
+
+###测试获取菜单
+GET http://127.0.0.1:5000/menu/menus/?type_=tree
+
+###测试根据ID获取单个用户
+GET http://127.0.0.1:5000/user/user/1/
+
+###测试获取用户列表
+GET http://127.0.0.1:5000/user/users?name=baizhan
+
+###测试修改用户信息
+PUT http://127.0.0.1:5000/user/user/11/
+Content-Type: application/json
+
+{
+    "phone":"15568578123",
+    "email":"222@qq.com",
+    "nick_name":"ls",
+    "role_id":1
+}
+
+###测试删除用户信息
+DELETE http://127.0.0.1:5000/user/user/2/
+
+###测试用户重置密码功能
+GET http://127.0.0.1:5000/user/rest_pwd/1/
