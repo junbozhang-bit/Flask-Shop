@@ -1,0 +1,18 @@
+# 自动检测文本文件，并在提交时统一转换为 LF（存入仓库），检出时根据操作系统自动转换
+* text=auto
+
+# 明确指定这些后缀的文件强制使用 LF（无论什么操作系统，存入仓库和检出都保持 LF）
+*.py text eol=lf
+*.sql text eol=lf
+*.ini text eol=lf
+*.mako text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+# 针对 migrations 目录下的所有 py 文件强制 LF
+migrations/**/*.py text eol=lf
+
+# 二进制文件（如图片）不要转换
+*.png binary
+*.jpg binary
+*.ico binary
